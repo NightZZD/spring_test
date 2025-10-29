@@ -1,6 +1,7 @@
 package com.example.demo.controller.pk;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,8 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/pk")
 public class BotInfoController {
     @RequestMapping("/getbotinfo")
-    public List<String> getBotInfo() {
-        List<String> botInfo = java.util.Arrays.asList("BotName: ExampleBot", "Version: 1.0", "Status: Active");
+    public Map<String,String> getBotInfo() {
+        Map<String,String> botInfo = new HashMap<>();
+        botInfo.put("name", "MyBot");
+        botInfo.put("version", "1.0.0");
+        botInfo.put("description", "A simple chat bot.");
+        botInfo.put("author", "zzd");
         return botInfo;
     }
 }
